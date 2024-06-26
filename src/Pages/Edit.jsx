@@ -17,6 +17,7 @@ const Edit = ({ id }) => {
     lng: "",
     company_name: "",
     company_catch: "",
+    image: "",
   });
 
   // Fetch data on component mount
@@ -46,15 +47,41 @@ const Edit = ({ id }) => {
     }));
   };
 
+  // Function to handle image input changes
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setEditData((prevData) => ({
+        ...prevData,
+        image: URL.createObjectURL(file),
+      }));
+    } else {
+      setEditData((prevData) => ({
+        ...prevData,
+        image: e.target.value,
+      }));
+    }
+  };
+
   // Function to handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent default form submission
+
+    const formData = new FormData();
+    Object.keys(editData).forEach((key) => {
+      formData.append(key, editData[key]);
+    });
 
     try {
       // Send PUT request to update data
       await axios.put(
         `https://667afce6bd627f0dcc915616.mockapi.io/api/Userdetail/${id}`,
-        editData
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
       );
       // Show success message
       alert("Details updated successfully");
@@ -68,6 +95,30 @@ const Edit = ({ id }) => {
   return (
     <div className="form-container">
       <form onSubmit={handleSubmit} className="form text-center p-4">
+        <div className="mb-3">
+          <label>Photo:</label>
+          {editData.image && (
+            <img
+              src={editData.image}
+              alt="preview"
+              style={{ width: "300px", height: "200px", objectFit: "cover" }}
+            />
+          )}
+          <input
+            type="file"
+            name="image"
+            onChange={handleImageChange}
+            className="form-control mt-2"
+          />
+          <input
+            type="text"
+            name="image"
+            value={editData.image}
+            onChange={handleChange}
+            placeholder="Or enter image URL"
+            className="form-control mt-2"
+          />
+        </div>
         <div className="mb-3">
           <label>Name:</label>
           <input
@@ -159,7 +210,7 @@ const Edit = ({ id }) => {
           />
         </div>
         <div className="mb-3">
-          <label>Company Catch:</label>
+          <label>Company Catchphrase:</label>
           <input
             type="text"
             name="company_catch"

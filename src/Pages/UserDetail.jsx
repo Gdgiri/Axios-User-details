@@ -42,45 +42,51 @@ const UserDetail = ({ setId }) => {
     <div className="container mt-4">
       <h2 className="text-center mb-4">User List</h2>
       <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-        {products.map((product, index) => (
-          <div key={product.id} className="col">
+        {products.map((user) => (
+          <div key={user.id} className="col">
             <div className="card h-100">
+              <img
+                src={user.Image}
+                alt={user.name}
+                className="card-img-top"
+                style={{ height: "200px", objectFit: "cover" }}
+              />
               <div className="card-body">
-                <h5 className="card-title">{product.name}</h5>
+                <h5 className="card-title">{user.name}</h5>
                 <div className="section-title">Address:</div>
                 <p className="card-text">
-                  <strong>Street:</strong> {product.street}
+                  <strong>Street:</strong> {user.street}
                 </p>
                 <p className="card-text">
-                  <strong>City:</strong> {product.city}
+                  <strong>City:</strong> {user.city}
                 </p>
                 <p className="card-text">
-                  <strong>Zipcode:</strong> {product.zipcode}
+                  <strong>Zipcode:</strong> {user.zipcode}
                 </p>
                 <div className="section-title">Geolocation:</div>
                 <p className="card-text">
-                  <strong>Latitude:</strong> {product.lat}
+                  <strong>Latitude:</strong> {user.lat}
                 </p>
                 <p className="card-text">
-                  <strong>Longitude:</strong> {product.lng}
+                  <strong>Longitude:</strong> {user.lng}
                 </p>
                 <div className="section-title">Company:</div>
                 <p className="card-text">
-                  <strong>Company Name:</strong> {product.company_name}
+                  <strong>Company Name:</strong> {user.company_name}
                 </p>
                 <p className="card-text">
-                  <strong>Company Catch:</strong> {product.company_catch}
+                  <strong>Company Catch:</strong> {user.company_catch}
                 </p>
                 <div className="text-center">
                   <button
                     className="btn btn-warning btn-sm mx-1"
-                    onClick={() => handleEdit(product.id)}
+                    onClick={() => handleEdit(user.id)}
                   >
                     Edit
                   </button>
                   <button
                     className="btn btn-danger btn-sm mx-1"
-                    onClick={() => handleDelete(product.id)}
+                    onClick={() => handleDelete(user.id)}
                   >
                     Delete
                   </button>
