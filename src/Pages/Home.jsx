@@ -45,20 +45,8 @@ const Home = () => {
               data-bs-parent="#productAccordion"
             >
               <div className="accordion-body">
-                <h3>
-                  
-                  <img
-                    src={element.Image}
-                    alt={element.name}
-                    style={{
-                      width: "300px",
-                      height: "200px",
-                      objectFit: "cover",
-                    }}
-                  />
-                </h3>
                 <h4>Name: {element.name}</h4>
-                <h4>Username: {element.username}</h4>
+                <h4>UserName: {element.username}</h4>
                 <h5>Street: {element.street}</h5>
                 <h5>City: {element.city}</h5>
                 <h5>Zipcode: {element.zipcode}</h5>
@@ -66,7 +54,7 @@ const Home = () => {
                 <h5>Latitude: {element.lat}</h5>
                 <h5>Longitude: {element.lng}</h5>
                 <h5>Company Name: {element.company_name}</h5>
-                <h6>Company Catchphrase: {element.company_catch}</h6>
+                <h6>Company Catch Phrase: {element.company_catch}</h6>
               </div>
             </div>
           </div>

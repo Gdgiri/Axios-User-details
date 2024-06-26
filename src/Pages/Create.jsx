@@ -15,7 +15,6 @@ const Create = () => {
     lng: "",
     company_name: "",
     company_catch: "",
-    image: "",
   });
 
   const handleChange = (e) => {
@@ -26,38 +25,13 @@ const Create = () => {
     }));
   };
 
-  const handleImageChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      setCreateData((prevData) => ({
-        ...prevData,
-        image: URL.createObjectURL(file),
-      }));
-    } else {
-      setCreateData((prevData) => ({
-        ...prevData,
-        image: e.target.value,
-      }));
-    }
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent default form submission
-
-    const formData = new FormData();
-    Object.keys(createData).forEach((key) => {
-      formData.append(key, createData[key]);
-    });
 
     try {
       await axios.post(
         "https://667afce6bd627f0dcc915616.mockapi.io/api/Userdetail",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
+        createData
       );
       // Show success message
       alert("User created successfully");
@@ -71,30 +45,6 @@ const Create = () => {
   return (
     <div className="form-container">
       <form onSubmit={handleSubmit} className="form text-center p-4">
-        <div className="mb-3">
-          <label>Photo:</label>
-          {createData.image && (
-            <img
-              src={createData.image}
-              alt="preview"
-              style={{ width: "100px", height: "100px", objectFit: "cover" }}
-            />
-          )}
-          <input
-            type="file"
-            name="image"
-            onChange={handleImageChange}
-            className="form-control mt-2"
-          />
-          <input
-            type="text"
-            name="image"
-            value={createData.image}
-            onChange={handleChange}
-            placeholder="Or enter image URL"
-            className="form-control mt-2"
-          />
-        </div>
         <div className="mb-3">
           <label>Name:</label>
           <input
