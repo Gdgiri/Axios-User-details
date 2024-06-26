@@ -44,7 +44,7 @@ const Home = () => {
               aria-labelledby={`heading${index}`}
               data-bs-parent="#productAccordion"
             >
-              <div className="accordion-body">
+              <div className="accordion-body ">
                 <h4>Name: {element.name}</h4>
                 <h4>UserName: {element.username}</h4>
                 <h5>Street: {element.street}</h5>

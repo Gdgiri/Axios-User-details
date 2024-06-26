@@ -53,6 +53,7 @@ const Create = () => {
             value={createData.name}
             onChange={handleChange}
             className="form-control"
+            required
           />
         </div>
         <div className="mb-3">
@@ -63,6 +64,7 @@ const Create = () => {
             value={createData.username}
             onChange={handleChange}
             className="form-control"
+            required
           />
         </div>
         <div className="mb-3">
@@ -73,6 +75,7 @@ const Create = () => {
             value={createData.street}
             onChange={handleChange}
             className="form-control"
+            required
           />
         </div>
         <div className="mb-3">
@@ -83,6 +86,7 @@ const Create = () => {
             value={createData.city}
             onChange={handleChange}
             className="form-control"
+            required
           />
         </div>
         <div className="mb-3">
@@ -93,6 +97,7 @@ const Create = () => {
             value={createData.zipcode}
             onChange={handleChange}
             className="form-control"
+            required
           />
         </div>
         <div className="mb-3">
@@ -103,6 +108,7 @@ const Create = () => {
             value={createData.phone}
             onChange={handleChange}
             className="form-control"
+            required
           />
         </div>
         <div className="mb-3">
@@ -113,6 +119,7 @@ const Create = () => {
             value={createData.lat}
             onChange={handleChange}
             className="form-control"
+            required
           />
         </div>
         <div className="mb-3">
@@ -123,6 +130,7 @@ const Create = () => {
             value={createData.lng}
             onChange={handleChange}
             className="form-control"
+            required
           />
         </div>
         <div className="mb-3">
@@ -133,6 +141,7 @@ const Create = () => {
             value={createData.company_name}
             onChange={handleChange}
             className="form-control"
+            required
           />
         </div>
         <div className="mb-3">
@@ -143,6 +152,7 @@ const Create = () => {
             value={createData.company_catch}
             onChange={handleChange}
             className="form-control"
+            required
           />
         </div>
         <button type="submit" className="btn btn-primary">

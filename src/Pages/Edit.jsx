@@ -76,6 +76,7 @@ const Edit = ({ id }) => {
             value={editData.name}
             onChange={handleChange}
             className="form-control"
+            required
           />
         </div>
         <div className="mb-3">
@@ -86,6 +87,7 @@ const Edit = ({ id }) => {
             value={editData.username}
             onChange={handleChange}
             className="form-control"
+            required
           />
         </div>
         <div className="mb-3">
@@ -96,6 +98,7 @@ const Edit = ({ id }) => {
             value={editData.street}
             onChange={handleChange}
             className="form-control"
+            required
           />
         </div>
         <div className="mb-3">
@@ -106,6 +109,7 @@ const Edit = ({ id }) => {
             value={editData.city}
             onChange={handleChange}
             className="form-control"
+            required
           />
         </div>
         <div className="mb-3">
@@ -116,6 +120,7 @@ const Edit = ({ id }) => {
             value={editData.zipcode}
             onChange={handleChange}
             className="form-control"
+            required
           />
         </div>
         <div className="mb-3">
@@ -126,6 +131,7 @@ const Edit = ({ id }) => {
             value={editData.phone}
             onChange={handleChange}
             className="form-control"
+            required
           />
         </div>
         <div className="mb-3">
@@ -136,6 +142,7 @@ const Edit = ({ id }) => {
             value={editData.lat}
             onChange={handleChange}
             className="form-control"
+            required
           />
         </div>
         <div className="mb-3">
@@ -146,6 +153,7 @@ const Edit = ({ id }) => {
             value={editData.lng}
             onChange={handleChange}
             className="form-control"
+            required
           />
         </div>
         <div className="mb-3">
@@ -156,6 +164,7 @@ const Edit = ({ id }) => {
             value={editData.company_name}
             onChange={handleChange}
             className="form-control"
+            required
           />
         </div>
         <div className="mb-3">
@@ -166,6 +175,7 @@ const Edit = ({ id }) => {
             value={editData.company_catch}
             onChange={handleChange}
             className="form-control"
+            required
           />
         </div>
         <button type="submit" className="btn btn-primary m-3">
