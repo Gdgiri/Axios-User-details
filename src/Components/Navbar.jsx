@@ -17,7 +17,7 @@ const Navbar = () => {
           </a>
 
           <a class="navbar-brand" href="">
-            <h4 className="text-white">CRUD-App</h4>
+            <h4 className="text-white">CRUD-APP</h4>
           </a>
           <button
             className="navbar-toggler"
@@ -34,25 +34,39 @@ const Navbar = () => {
             </a>
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav mx-auto">
+            <ul className="navbar-nav mx-auto m-3 gap-5">
               <li className="nav-item">
                 <Link className="nav-link text-white " to="/">
+                  <span>
+                    <i class="bi bi-house-fill"></i>
+                  </span>{" "}
                   Home
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link text-white " to="/details">
+                  <span>
+                    <i class="bi bi-person-square"></i>
+                  </span>{" "}
                   User_Details
                 </Link>
               </li>
 
               <li className="nav-item">
                 <Link className="nav-link text-white " to="/create">
+                  <span>
+                    <i class="bi bi-file-earmark-plus-fill"></i>
+                  </span>{" "}
                   Create
                 </Link>
               </li>
             </ul>
-            <button className="btn btn-danger">Logout</button>
+            <button className="btn btn-danger">
+              <span className="m-2">
+                <i class="bi bi-box-arrow-left"></i>
+              </span>
+               Logout
+            </button>
           </div>
         </div>
       </nav>
