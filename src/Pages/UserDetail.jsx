@@ -55,7 +55,7 @@ const UserDetail = ({ setId }) => {
                   <strong>City:</strong> {product.city}
                 </p>
                 <p className="card-text">
-                  <strong>Zipcode:</strong> {product.phone}
+                  <strong>Phone:</strong> {product.phone}
                 </p>
                 <p className="card-text">
                   <strong>Zipcode:</strong> {product.zipcode}
